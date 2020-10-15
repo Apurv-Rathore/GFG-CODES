@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n,d,t;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n>>d;
+	    int l[n];
+	    int ans[n];
+	    int i=0;
+	    for (i=0;i<n;i++)
+	    {
+	        cin>>l[i];
+	        if (i>=d)
+	        {
+	            ans[i-d] = l[i];
+	        }
+	    }
+	    int j = n-d;
+	    for (int i=0;i<d;i++)
+	    {
+	        ans[j] = l[i];
+	        j++;
+	    }
+	    for(int i=0;i<n;i++) cout<<ans[i]<<" ";
+	    cout<<endl;
+	}
+	return 0;
+}
